@@ -1,0 +1,1400 @@
+/* =========================================
+   MAIN BACKGROUND
+========================================= */
+
+.welcome-bg {
+  --background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(99, 102, 241, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(139, 92, 246, 0.25),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #1e3c72,
+      #2a5298,
+      #4f46a5
+    );
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header-bar {
+  --background: #172554;
+  --color: #ffffff;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header-bar ion-title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+  width: 100%;
+  box-sizing: border-box;
+
+  text-align: center;
+
+  padding: 35px 20px 18px;
+
+  animation: heroFade 0.8s ease;
+}
+
+.hero h1 {
+  font-size: 25px;
+  font-weight: 700;
+
+  margin: 12px 0 6px;
+
+  letter-spacing: 0.3px;
+}
+
+.hero p {
+  font-size: 14px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================
+   PROFILE AVATAR
+========================================= */
+
+.avatar {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #6366f1,
+      #8b5cf6
+    );
+
+  color: #ffffff;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  border: 4px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 0 0 7px rgba(255, 255, 255, 0.06),
+    0 10px 25px rgba(0, 0, 0, 0.25);
+
+  animation: avatarFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================================
+   AI CARD
+========================================= */
+
+.ai-card {
+  width: calc(100% - 40px);
+
+  max-width: 850px;
+
+  margin: 8px auto 25px;
+
+  box-sizing: border-box;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  color: #1e293b;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+
+  animation: cardFade 0.8s ease;
+}
+
+
+/* =========================================
+   AI CARD HEADER
+========================================= */
+
+.ai-card ion-card-header {
+  padding: 14px 18px 6px;
+}
+
+.ai-card ion-card-title {
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #1e293b;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* ONLINE */
+
+.ai-card ion-card-title::after {
+  content: "● Online";
+
+  margin-left: auto;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #22c55e;
+
+  background: #ecfdf5;
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   AI CARD CONTENT
+========================================= */
+
+.ai-card ion-card-content {
+  padding: 8px 14px 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CHAT CONTAINER
+========================================= */
+
+.chat-container {
+  width: 100%;
+
+  height: 140px;
+
+  max-height: 380px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+
+  padding: 7px 4px;
+
+  margin-bottom: 9px;
+
+  scroll-behavior: smooth;
+
+  transition: height 0.4s ease;
+}
+
+
+/* SCROLLBAR */
+
+.chat-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+  width: 100%;
+
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  animation: messageFade 0.35s ease;
+
+  box-sizing: border-box;
+}
+
+
+/* USER */
+
+.user-message {
+  align-items: flex-end;
+  text-align: right;
+}
+
+
+/* AI */
+
+.assistant-message {
+  align-items: flex-start;
+  text-align: left;
+}
+
+
+/* =========================================
+   MESSAGE LABEL
+========================================= */
+
+.message-label {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  margin-bottom: 3px;
+
+  color: #64748b;
+}
+
+
+/* =========================================
+   MESSAGE CONTENT
+========================================= */
+
+.message-content {
+  max-width: 75%;
+
+  padding: 8px 12px;
+
+  border-radius: 13px;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+
+  box-sizing: border-box;
+}
+
+
+/* USER BUBBLE */
+
+.user-message .message-content {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #8b5cf6
+    );
+
+  border-bottom-right-radius: 5px;
+
+  box-shadow:
+    0 4px 10px rgba(99, 102, 241, 0.2);
+}
+
+
+/* AI BUBBLE */
+
+.assistant-message .message-content {
+  color: #334155;
+
+  background: #f1f5f9;
+
+  border-bottom-left-radius: 5px;
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   THINKING
+========================================= */
+
+.thinking {
+  color: #64748b !important;
+
+  font-style: italic;
+
+  animation: thinkingPulse 1.2s infinite;
+}
+
+
+/* =========================================
+   SOURCES
+========================================= */
+
+.sources {
+  max-width: 75%;
+
+  margin-top: 5px;
+
+  font-size: 10px;
+
+  color: #64748b;
+
+  box-sizing: border-box;
+}
+
+.sources-title {
+  font-weight: 700;
+
+  color: #475569;
+
+  margin-bottom: 3px;
+}
+
+.source-item {
+  margin-bottom: 2px;
+
+  padding: 3px 6px;
+
+  background: #f8fafc;
+
+  border-radius: 6px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   CHAT INPUT
+========================================= */
+
+.chat-input-container {
+  width: 100%;
+
+  min-height: 48px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 3px 5px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce1ee;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.07);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* FOCUS */
+
+.chat-input-container:focus-within {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12),
+    0 6px 18px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.chat-input-container ion-input {
+  flex: 1;
+
+  min-width: 0;
+
+  --color: #1e293b;
+  --placeholder-color: #94a3b8;
+
+  --padding-start: 5px;
+  --padding-end: 5px;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   PLUS BUTTON
+========================================= */
+
+.plus-button {
+  flex: 0 0 36px;
+
+  width: 36px;
+  height: 36px;
+
+  margin: 0;
+
+  --color: #475569;
+
+  --padding-start: 0;
+  --padding-end: 0;
+
+  font-size: 23px;
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* PLUS HOVER */
+
+.plus-button:hover {
+  --color: #6366f1;
+
+  --background: #f1f5ff;
+
+  transform: rotate(90deg);
+}
+
+
+/* PLUS ACTIVE */
+
+.plus-button:active {
+  transform: scale(0.9);
+}
+
+
+/* =========================================
+   SEND BUTTON WRAPPER
+========================================= */
+
+.send-button-wrapper {
+  flex: 0 0 38px;
+
+  width: 38px;
+  height: 38px;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.send-button {
+  width: 36px;
+  height: 36px;
+
+  margin: 0;
+
+  --color: #ffffff;
+
+  --background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #8b5cf6
+    );
+
+  --border-radius: 50%;
+
+  --padding-start: 0;
+  --padding-end: 0;
+
+  font-size: 17px;
+
+  box-shadow:
+    0 4px 12px rgba(99, 102, 241, 0.3);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* SEND HOVER */
+
+.send-button:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 6px 16px rgba(99, 102, 241, 0.42);
+}
+
+
+/* SEND ACTIVE */
+
+.send-button:active {
+  transform: scale(0.9);
+}
+
+
+/* DISABLED */
+
+.send-button:disabled {
+  opacity: 0.4;
+
+  box-shadow: none;
+
+  transform: none;
+}
+
+
+/* =========================================
+   SEND TOOLTIP
+========================================= */
+
+.send-tooltip {
+  position: absolute;
+
+  bottom: 48px;
+  right: 0;
+
+  white-space: nowrap;
+
+  padding: 6px 10px;
+
+  border-radius: 7px;
+
+  background: #172554;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: translateY(5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  z-index: 100;
+}
+
+
+/* TOOLTIP ARROW */
+
+.send-tooltip::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -5px;
+  right: 13px;
+
+  width: 10px;
+  height: 10px;
+
+  background: #172554;
+
+  transform: rotate(45deg);
+}
+
+
+/* SHOW TOOLTIP */
+
+.send-button-wrapper:hover .send-tooltip {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   GENERAL BUTTON
+========================================= */
+
+ion-button {
+  font-weight: 600;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes cardFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes avatarFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+@keyframes messageFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes thinkingPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .ai-card {
+    width: calc(100% - 30px);
+  }
+
+  .message-content {
+    max-width: 80%;
+  }
+
+  .sources {
+    max-width: 80%;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* HERO */
+
+  .hero {
+    padding:
+      25px
+      14px
+      12px;
+  }
+
+  .hero h1 {
+    font-size: 21px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+
+  /* AVATAR */
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+
+    font-size: 26px;
+  }
+
+
+  /* AI CARD */
+
+  .ai-card {
+    width: calc(100% - 20px);
+
+    max-width: none;
+
+    margin:
+      5px
+      auto
+      18px;
+
+    border-radius: 16px;
+  }
+
+
+  /* CARD HEADER */
+
+  .ai-card ion-card-header {
+    padding:
+      11px
+      12px
+      5px;
+  }
+
+  .ai-card ion-card-title {
+    font-size: 14px;
+  }
+
+
+  /* CARD CONTENT */
+
+  .ai-card ion-card-content {
+    padding:
+      6px
+      9px
+      10px;
+  }
+
+
+  /* CHAT */
+
+  .chat-container {
+    height: 120px;
+
+    max-height: 320px;
+
+    padding:
+      5px
+      2px;
+
+    margin-bottom: 7px;
+  }
+
+
+  /* MESSAGES */
+
+  .message {
+    margin-bottom: 8px;
+  }
+
+  .message-label {
+    font-size: 9px;
+  }
+
+  .message-content {
+    max-width: 88%;
+
+    padding:
+      7px
+      9px;
+
+    font-size: 12px;
+
+    line-height: 1.35;
+  }
+
+
+  /* SOURCES */
+
+  .sources {
+    max-width: 88%;
+
+    font-size: 9px;
+  }
+
+
+  /* INPUT */
+
+  .chat-input-container {
+    min-height: 44px;
+
+    padding:
+      2px
+      4px;
+
+    border-radius: 14px;
+  }
+
+
+  .chat-input-container ion-input {
+    font-size: 12px;
+
+    --padding-start: 4px;
+    --padding-end: 4px;
+  }
+
+
+  /* PLUS */
+
+  .plus-button {
+    flex: 0 0 33px;
+
+    width: 33px;
+    height: 33px;
+
+    font-size: 21px;
+  }
+
+
+  /* SEND */
+
+  .send-button-wrapper {
+    flex: 0 0 35px;
+
+    width: 35px;
+    height: 35px;
+  }
+
+  .send-button {
+    width: 33px;
+    height: 33px;
+
+    font-size: 15px;
+  }
+
+
+ 
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   375px AND BELOW
+========================================= */
+
+@media (max-width: 375px) {
+
+  .hero {
+    padding-top: 22px;
+  }
+
+  .hero h1 {
+    font-size: 19px;
+  }
+
+  .hero p {
+    font-size: 12px;
+  }
+
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+
+    font-size: 24px;
+  }
+
+
+  .ai-card {
+    width: calc(100% - 14px);
+
+    border-radius: 15px;
+  }
+
+
+  .ai-card ion-card-title {
+    font-size: 13px;
+  }
+
+
+  .chat-container {
+    height: 105px;
+
+    max-height: 280px;
+  }
+
+
+  .message-content {
+    max-width: 91%;
+
+    font-size: 11.5px;
+
+    padding:
+      6px
+      8px;
+  }
+
+
+  .chat-input-container {
+    min-height: 42px;
+  }
+
+
+  .plus-button {
+    flex-basis: 31px;
+
+    width: 31px;
+    height: 31px;
+
+    font-size: 19px;
+  }
+
+
+  .send-button-wrapper {
+    flex-basis: 33px;
+
+    width: 33px;
+    height: 33px;
+  }
+
+
+  .send-button {
+    width: 31px;
+    height: 31px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   320px AND BELOW
+========================================= */
+
+@media (max-width: 320px) {
+
+  .ai-card {
+    width: calc(100% - 10px);
+  }
+
+  .ai-card ion-card-content {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .chat-container {
+    height: 95px;
+  }
+
+  .message-content {
+    max-width: 94%;
+  }
+
+  .chat-input-container ion-input {
+    font-size: 11px;
+  }
+}
+
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.send-button-wrapper {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible !important;
+
+  z-index: 1000;
+}
+
+.send-button {
+  width: 36px;
+  height: 36px;
+
+  margin: 0;
+
+  --padding-start: 0;
+  --padding-end: 0;
+
+  --color: #ffffff;
+
+  --background: linear-gradient(
+    135deg,
+    #6366f1,
+    #8b5cf6
+  );
+
+  --background-hover: #4f46e5;
+
+  --border-radius: 50%;
+
+  font-size: 17px;
+
+  box-shadow:
+    0 4px 12px rgba(99, 102, 241, 0.3);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.send-button:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 6px 18px rgba(99, 102, 241, 0.45);
+}
+
+/* =========================================
+   SEND PROMPT TOOLTIP
+========================================= */
+
+.send-button-wrapper {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible !important;
+
+  z-index: 9999;
+}
+
+
+/* SEND BUTTON */
+
+.send-button {
+  width: 36px;
+  height: 36px;
+
+  margin: 0;
+
+  --padding-start: 0;
+  --padding-end: 0;
+
+  --color: #ffffff;
+
+  --background: linear-gradient(
+    135deg,
+    #6366f1,
+    #8b5cf6
+  );
+
+  --background-hover: linear-gradient(
+    135deg,
+    #4f46e5,
+    #7c3aed
+  );
+
+  --border-radius: 50%;
+
+  font-size: 17px;
+
+  box-shadow:
+    0 5px 15px rgba(99, 102, 241, 0.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* SEND BUTTON HOVER */
+
+.send-button:hover {
+  transform: scale(1.1);
+
+  box-shadow:
+    0 8px 20px rgba(99, 102, 241, 0.5);
+}
+
+
+/* =========================================
+   SEND PROMPT
+========================================= */
+
+.send-tooltip {
+  position: absolute;
+
+  bottom: calc(100% + 12px);
+
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    translateY(8px)
+    scale(0.9);
+
+  /* BLUE / PURPLE GRADIENT */
+
+  background: linear-gradient(
+    135deg,
+    #312e81,
+    #6366f1,
+    #8b5cf6
+  );
+
+  color: #ffffff;
+
+  padding: 8px 13px;
+
+  border-radius: 10px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
+
+  line-height: 1;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+  box-shadow:
+    0 8px 20px rgba(49, 46, 129, 0.35);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+
+/* =========================================
+   TOOLTIP ARROW
+========================================= */
+
+.send-tooltip::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -5px;
+
+  width: 10px;
+  height: 10px;
+
+  background: #6366f1;
+
+  transform: translateX(-50%) rotate(45deg);
+
+  border-radius: 2px;
+}
+
+
+
+/* =========================================
+   TOOLTIP HOVER GLOW
+========================================= */
+
+.send-button-wrapper:hover .send-tooltip {
+  box-shadow:
+    0 8px 25px rgba(99, 102, 241, 0.45);
+}
+
+
+/* =========================================
+   ALLOW TOOLTIP OUTSIDE CARD
+========================================= */
+
+.chat-input-container {
+  position: relative;
+
+  overflow: visible !important;
+}
+
+.ai-card {
+  overflow: visible !important;
+}
+
+.ai-card ion-card-content {
+  overflow: visible !important;
+}
+
+
+/* Tooltip arrow */
+
+.send-tooltip::after {
+  content: "";
+
+  position: absolute;
+
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #172554;
+}
+
+
+/* Show tooltip */
+
+.send-button-wrapper:hover .send-tooltip {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+
+/* =========================================
+   ALLOW TOOLTIP TO EXTEND OUTSIDE
+========================================= */
+
+.chat-input-container {
+  position: relative;
+
+  overflow: visible !important;
+}
+
+.ai-card {
+  overflow: visible !important;
+}
+
+.ai-card ion-card-content {
+  overflow: visible !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .send-button-wrapper {
+    width: 35px;
+    height: 35px;
+
+    flex: 0 0 35px;
+  }
+
+  .send-button {
+    width: 33px;
+    height: 33px;
+
+    font-size: 15px;
+  }
+
+  .send-tooltip {
+    font-size: 10px;
+
+    padding: 6px 9px;
+
+    bottom: calc(100% + 8px);
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 375px) {
+
+  .send-button-wrapper {
+    width: 33px;
+    height: 33px;
+
+    flex-basis: 33px;
+  }
+
+  .send-button {
+    width: 31px;
+    height: 31px;
+
+    font-size: 14px;
+  }
+}

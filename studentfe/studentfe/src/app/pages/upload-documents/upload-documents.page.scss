@@ -1,0 +1,664 @@
+/* ================================
+   DOCUMENT PAGE BACKGROUND
+================================ */
+
+.bg-doc {
+  --background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(99, 102, 241, 0.25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(139, 92, 246, 0.20),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #1e3c72, #2a5298);
+
+  color: #fff;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header-bar {
+  --background: #1e3c72;
+  --color: #fff;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.20);
+
+  animation: headerSlide 0.6s ease-out;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.documents-container {
+  width: 100%;
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  padding: 25px 20px 40px;
+
+  box-sizing: border-box;
+
+  animation: pageFadeIn 0.7s ease-out;
+}
+
+
+/* ================================
+   PAGE TITLE
+================================ */
+
+.documents-title {
+  width: 100%;
+
+  margin: 5px 0 5px;
+
+  font-size: 26px;
+  font-weight: 700;
+
+  color: #fff;
+
+  text-align: center;
+
+  animation: titleDrop 0.7s ease-out;
+}
+
+.documents-subtitle {
+  width: 100%;
+
+  margin: 0 0 22px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+
+  text-align: center;
+
+  animation: subtitleFade 0.9s ease-out;
+}
+
+
+/* ================================
+   COMMON CARD
+================================ */
+
+.upload-card,
+.documents-list-card {
+  width: 100% !important;
+  max-width: 500px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  border-radius: 18px !important;
+
+  background: #fff !important;
+
+  color: #1e293b;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  animation: cardSlideUp 0.8s ease-out both;
+}
+
+
+/* Upload card comes first */
+
+.upload-card {
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+
+  animation-delay: 0.15s;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+
+/* Documents card comes second */
+
+.documents-list-card {
+  margin-top: 0 !important;
+
+  animation-delay: 0.3s;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.14);
+}
+
+
+/* Hover animation */
+
+.upload-card:hover,
+.documents-list-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ================================
+   CARD HEADER
+================================ */
+
+ion-card-header {
+  padding: 16px 18px 8px;
+}
+
+ion-card-title {
+  color: #172554;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* ================================
+   CARD CONTENT
+================================ */
+
+ion-card-content {
+  padding: 10px 18px 18px;
+}
+
+
+/* ================================
+   TITLE INPUT
+================================ */
+
+.upload-card ion-input {
+  width: 100%;
+
+  --background: #fff;
+
+  --padding-start: 10px;
+  --padding-end: 10px;
+
+  color: #1e293b;
+
+  border: 1px solid #dbe3ff;
+
+  border-radius: 9px;
+
+  box-sizing: border-box;
+
+  margin-bottom: 15px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.upload-card ion-input:focus-within {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.10);
+
+  transform: translateY(-1px);
+}
+
+
+/* ================================
+   FILE UPLOAD AREA
+================================ */
+
+.file-upload-area {
+  width: 100%;
+
+  padding: 12px;
+
+  border: 2px dashed #c7d2fe;
+
+  border-radius: 12px;
+
+  background: #f8faff;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.file-upload-area:hover {
+  border-color: #6366f1;
+
+  background: #eef2ff;
+
+  transform: scale(1.01);
+}
+
+
+/* File input */
+
+.file-upload-area input[type="file"] {
+  width: 100%;
+
+  max-width: 100%;
+
+  padding: 7px;
+
+  box-sizing: border-box;
+
+  border: 1px dashed #a5b4fc;
+
+  border-radius: 8px;
+
+  background: #fff;
+
+  color: #475569;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: box-shadow 0.25s ease;
+}
+
+.file-upload-area input[type="file"]:hover {
+  box-shadow:
+    0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+
+/* ================================
+   UPLOAD BUTTON
+================================ */
+
+.upload-button {
+  width: 100% !important;
+
+  margin-top: 15px;
+
+  --background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #8b5cf6
+    );
+
+  --background-hover:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #7c3aed
+    );
+
+  --border-radius: 10px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 7px 16px rgba(99, 102, 241, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.upload-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(99, 102, 241, 0.35);
+}
+
+.upload-button:active {
+  transform: scale(0.97);
+}
+
+
+/* ================================
+   DOCUMENT LIST
+================================ */
+
+.documents-list-card ion-list {
+  background: transparent;
+
+  padding: 0;
+}
+
+.documents-list-card ion-item {
+  --background: #f8faff;
+  --border-color: transparent;
+
+  border-radius: 10px;
+
+  margin-bottom: 8px;
+
+  color: #1e293b;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  animation: documentItemIn 0.5s ease-out both;
+}
+
+
+/* Stagger each document */
+
+.documents-list-card ion-item:nth-child(1) {
+  animation-delay: 0.35s;
+}
+
+.documents-list-card ion-item:nth-child(2) {
+  animation-delay: 0.45s;
+}
+
+.documents-list-card ion-item:nth-child(3) {
+  animation-delay: 0.55s;
+}
+
+.documents-list-card ion-item:nth-child(4) {
+  animation-delay: 0.65s;
+}
+
+.documents-list-card ion-item:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+.documents-list-card ion-item:hover {
+  transform: translateX(5px);
+
+  background: #eef2ff;
+
+  box-shadow:
+    0 5px 14px rgba(99, 102, 241, 0.15);
+}
+
+
+/* Document title */
+
+.documents-list-card ion-label {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #334155;
+}
+
+
+/* View button */
+
+.documents-list-card ion-button {
+  --border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.documents-list-card ion-button:hover {
+  transform: scale(1.05);
+}
+
+
+/* ================================
+   FLOATING UPLOAD ICON
+================================ */
+
+.upload-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 8px auto 14px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #8b5cf6
+    );
+
+  color: white;
+
+  font-size: 25px;
+
+  box-shadow:
+    0 8px 20px rgba(99, 102, 241, 0.25);
+
+  animation:
+    iconFloat 3s ease-in-out infinite,
+    iconAppear 0.8s ease-out;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes headerSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes titleDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes subtitleFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes documentItemIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+@keyframes iconAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .documents-container {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 20px 14px 30px;
+  }
+
+  .documents-title {
+    font-size: 23px;
+  }
+
+  .documents-subtitle {
+    font-size: 12px;
+
+    margin-bottom: 18px;
+  }
+
+  .upload-card,
+  .documents-list-card {
+    width: 100% !important;
+
+    max-width: 500px !important;
+
+    border-radius: 16px !important;
+  }
+
+  ion-card-header {
+    padding: 14px 14px 7px;
+  }
+
+  ion-card-content {
+    padding: 9px 14px 15px;
+  }
+
+  ion-card-title {
+    font-size: 17px;
+  }
+
+  .file-upload-area {
+    padding: 10px;
+  }
+
+  .file-upload-area input[type="file"] {
+    font-size: 11px;
+  }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 375px) {
+
+  .documents-container {
+    padding: 16px 9px 25px;
+  }
+
+  .documents-title {
+    font-size: 21px;
+  }
+
+  .upload-card,
+  .documents-list-card {
+    border-radius: 14px !important;
+  }
+
+  ion-card-content {
+    padding: 8px 10px 14px;
+  }
+
+  .file-upload-area {
+    padding: 8px;
+  }
+}
+
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}

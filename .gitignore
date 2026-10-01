@@ -1,0 +1,17 @@
+# Django
+studentbeapi/.env
+studentbeapi/venv/
+studentbeapi/__pycache__/
+studentbeapi/*/__pycache__/
+studentbeapi/*.pyc
+studentbeapi/media/
+studentbeapi/staticfiles/
+
+# Angular / Ionic
+studentfe/studentfe/node_modules/
+studentfe/studentfe/.angular/
+studentfe/studentfe/www/
+studentfe/studentfe/.env
+
+# Mac
+.DS_Store

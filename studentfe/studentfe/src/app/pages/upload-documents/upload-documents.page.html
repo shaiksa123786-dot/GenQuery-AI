@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar class="header-bar">
+
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/dashboard">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Documents</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="bg-doc">
+
+  <div class="documents-container">
+
+    <!-- PAGE TITLE -->
+    <h1 class="documents-title">
+      Your Documents
+    </h1>
+
+    <p class="documents-subtitle">
+      Upload and manage your documents
+    </p>
+
+
+    <!-- ================================
+         UPLOAD DOCUMENT
+    ================================= -->
+
+    <ion-card class="upload-card">
+
+      <ion-card-header>
+        <ion-card-title>
+          Upload Document
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <!-- TITLE -->
+        <ion-input
+          label="Title"
+          label-placement="stacked"
+          placeholder="Enter title"
+          [(ngModel)]="title">
+        </ion-input>
+
+
+        <!-- FILE -->
+        <div class="file-upload-area">
+
+          <input
+            type="file"
+            #fileInput
+            (change)="selectFile($event)"
+          />
+
+        </div>
+
+
+        <!-- UPLOAD BUTTON -->
+        <ion-button
+          expand="block"
+          class="upload-button"
+          (click)="upload(fileInput)">
+
+          Upload
+
+        </ion-button>
+
+      </ion-card-content>
+
+    </ion-card>
+
+
+    <!-- ================================
+         MY DOCUMENTS
+    ================================= -->
+
+    <ion-card class="documents-list-card">
+
+      <ion-card-header>
+
+        <ion-card-title>
+          My Documents
+        </ion-card-title>
+
+      </ion-card-header>
+
+
+      <ion-card-content>
+
+        <ion-list>
+
+          <ion-item
+            *ngFor="let doc of docs">
+
+            <ion-label>
+              {{ doc.title }}
+            </ion-label>
+
+
+            <ion-button
+              fill="outline"
+              size="small"
+              (click)="openDoc(doc)">
+
+              View
+
+            </ion-button>
+
+          </ion-item>
+
+        </ion-list>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

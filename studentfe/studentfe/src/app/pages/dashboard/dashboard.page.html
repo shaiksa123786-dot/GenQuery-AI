@@ -1,0 +1,190 @@
+<ion-header>
+  <ion-toolbar class="header-bar">
+
+    <ion-title>
+      Student Portal
+    </ion-title>
+
+    <!-- LOGOUT BUTTON -->
+    <ion-buttons slot="end">
+      <ion-button
+        color="danger"
+        (click)="logout()">
+        Logout
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="welcome-bg">
+
+  <!-- =========================
+       WELCOME / PROFILE SECTION
+  ========================== -->
+
+  <div class="hero" *ngIf="profile">
+
+    <!-- PROFILE AVATAR -->
+    <div class="avatar">
+      {{ profile.first_name?.charAt(0) | uppercase }}
+    </div>
+
+    <!-- WELCOME TEXT -->
+    <h1>
+      Welcome, {{ profile.first_name }} {{ profile.last_name }}
+    </h1>
+
+    <p>
+      We're happy to see you back
+    </p>
+
+  </div>
+
+
+  <!-- =========================
+       AI ASSISTANT
+  ========================== -->
+
+  <ion-card class="ai-card">
+
+    <ion-card-header>
+
+      <ion-card-title>
+        🤖 AI ASSISTANT
+      </ion-card-title>
+
+    </ion-card-header>
+
+
+    <ion-card-content>
+
+      <!-- =========================
+           CHAT MESSAGES
+      ========================== -->
+
+      <div class="chat-container">
+
+        <div
+          class="message"
+          *ngFor="let message of messages"
+          [class.user-message]="message.role === 'user'"
+          [class.assistant-message]="message.role === 'assistant'"
+        >
+
+          <!-- MESSAGE LABEL -->
+          <div class="message-label">
+            {{ message.role === 'user' ? 'You' : 'AI' }}
+          </div>
+
+
+          <!-- MESSAGE CONTENT -->
+          <div class="message-content">
+            {{ message.content }}
+          </div>
+
+
+          <!-- SOURCES -->
+          <div
+            class="sources"
+            *ngIf="
+              message.role === 'assistant'
+              && message.sources?.length
+            "
+          >
+
+            <div class="sources-title">
+              Sources
+            </div>
+
+
+            <div
+              class="source-item"
+              *ngFor="let source of message.sources"
+            >
+
+              {{ source.source }}
+
+              <span>
+                · Chunk {{ source.chunk_index }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             AI LOADING MESSAGE
+        ========================== -->
+
+        <div
+          class="message assistant-message"
+          *ngIf="chatLoading"
+        >
+
+          <div class="message-label">
+            AI
+          </div>
+
+          <div class="message-content thinking">
+            Thinking...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           CHAT INPUT
+      ========================== -->
+
+      <div class="chat-input-container">
+
+        <!-- PLUS BUTTON = UPLOAD DOCUMENTS -->
+        <ion-button
+          class="plus-button"
+          fill="clear"
+          type="button"
+          (click)="goUpload()"
+        >
+          +
+        </ion-button>
+
+
+        <!-- TEXT INPUT -->
+        <ion-input
+          [(ngModel)]="chatInput"
+          placeholder="Ask something..."
+          [disabled]="chatLoading"
+          (keyup.enter)="sendMessage()"
+        >
+        </ion-input>
+
+
+        <!-- SEND BUTTON -->
+        <ion-button
+          class="send-button"
+          fill="clear"
+          type="button"
+          title="Send prompt"
+          (click)="sendMessage()"
+          [disabled]="chatLoading || !chatInput.trim()"
+        >
+          ➤
+        </ion-button>
+        <div class="send-tooltip">
+    Send prompt
+  </div>
+
+      </div>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
